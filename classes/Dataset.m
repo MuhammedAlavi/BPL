@@ -127,6 +127,15 @@ classdef Dataset < BetterHandle
             dat = nested_squeeze(obj,dat);
             
         end        
+        
+		% get the size of dataset 
+		function [sz] = size(obj,type,aindx,cindx,rindx)
+			%return size of repository,
+			if ~exist('type','var')
+				type = [];
+			end
+			dtype = select_data_type(type)
+        end
     end
     
     methods (Access = private)
